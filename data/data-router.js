@@ -28,7 +28,7 @@ router.post('/:id/comments', (req, res) => {
         Db  
             .insert(newPost)
             .then(post => {
-                if(!post.id){
+                if(!post){
                     res.status(404).json({ errorMessage: "The post with the specified ID does not exist." })
                 } else {
                     res.status(201).json(post)
